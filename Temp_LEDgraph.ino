@@ -33,6 +33,7 @@
   // Setting Input analog pin ( LM35 )
   pinMode(TempPin , INPUT);
 
+ // Test all LEDs
   for(byte j=2 ; j<10 ;j++)
   {
     digitalWrite(j , HIGH);
@@ -63,7 +64,7 @@
 // Reading Temperature from LM35
 float ReadTemp()
 {
-  float LTemp = (5.0 *  analogRead(TempPin) * 100.0) / 1024;
+  float LTemp = (5.0 *  analogRead(TempPin) * 100.0) / 1024; // Formula to convert LM35 reading to *C ( obtained from LM35 datasheet )
   return LTemp;
 }
 
